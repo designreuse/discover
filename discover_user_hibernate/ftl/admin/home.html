@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>主页</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="${siteurl}bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="${siteurl}plugins/FontAwesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="${siteurl}plugins/ionicons201/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="${siteurl}dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="${siteurl}dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    [#include "/admin/common/commons.html"]
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Header Navbar: style can be found in header.less -->
+        [#include "/admin/common/nav.html"]
+    </header>
+
+    <!-- =============================================== -->
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            [@user_panel /]
+            <!-- search form -->
+            [@sidebar_form /]
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">主面板</li>
+                [@menustag id=1]
+                [#list list as item]
+                [@menu item "1,15"]
+                [/@menu]
+                [/#list]
+                [/@menustag]
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- =============================================== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                首页
+            </h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">CPU Traffic</span>
+                            <span class="info-box-number">90<small>%</small></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Likes</span>
+                            <span class="info-box-number">41,410</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+
+                <!-- fix for small devices only -->
+                <div class="clearfix visible-sm-block"></div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Sales</span>
+                            <span class="info-box-number">760</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">New Members</span>
+                            <span class="info-box-number">2,000</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-12 connectedSortable ui-sortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <div class="nav-tabs-custom" style="cursor: move;">
+                        <!-- Tabs within a box -->
+                        <ul class="nav nav-tabs pull-right ui-sortable-handle">
+                            <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+                            <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+                            <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                        </ul>
+                        <div class="tab-content no-padding">
+                            <!-- Morris chart - Sales -->
+                            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"><svg height="300" version="1.1" width="722" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; top: -0.433319px;"><desc>Created with Raphaël 2.2.0</desc><defs/><text style="text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="50.54999923706055" y="259" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal"><tspan dy="3.999997138977051">0</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M63.04999923706055,259H697.033" stroke-width="0.5"/><text style="text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="50.54999923706055" y="200.5" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal"><tspan dy="3.999997138977051">7,500</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M63.04999923706055,200.5H697.033" stroke-width="0.5"/><text style="text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="50.54999923706055" y="142" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal"><tspan dy="3.999997138977051">15,000</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M63.04999923706055,142H697.033" stroke-width="0.5"/><text style="text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="50.54999923706055" y="83.5" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal"><tspan dy="3.999997138977051">22,500</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M63.04999923706055,83.5H697.033" stroke-width="0.5"/><text style="text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="50.54999923706055" y="25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal"><tspan dy="4">30,000</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M63.04999923706055,25H697.033" stroke-width="0.5"/><text style="text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="580.7129111601412" y="271.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal" transform="matrix(1,0,0,1,0,8)"><tspan dy="4.000012397766113">2013</tspan></text><text style="text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" x="298.77150377346334" y="271.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal" transform="matrix(1,0,0,1,0,8)"><tspan dy="4.000012397766113">2012</tspan></text><path style="fill-opacity: 1;" fill="#74a5c2" stroke="none" d="M63.04999923706055,217.4104C80.76762866299931,217.91740000000001,116.20288751487685,220.948675,133.92051694081562,219.4384C151.6381463667544,217.928125,187.07340521863193,207.57511147540984,204.79103464457071,205.3282C222.31608114196666,203.10571147540983,257.36617413675856,203.357725,274.89122063415454,201.5608C292.4162671315505,199.76387499999998,327.4663601263424,193.47297786885247,344.9914066237384,190.9528C362.70903604967714,188.40492786885247,398.1442949015547,181.182325,415.86192432749345,181.2886C433.5795537534322,181.394875,469.01481260530977,202.66209180327868,486.7324420312485,191.803C504.25748852864444,181.0619418032787,539.3075815234364,101.29188618784531,556.8326280208323,94.888C574.1650915896855,88.55448618784531,608.8300187273917,134.20465000000002,626.1624822962449,140.85340000000002C643.8801117221836,147.64990000000003,679.3153705740613,146.7151,697.033,148.669L697.033,259L63.04999923706055,259Z" fill-opacity="1"/><path style="" fill="none" stroke="#3c8dbc" d="M63.04999923706055,217.4104C80.76762866299931,217.91740000000001,116.20288751487685,220.948675,133.92051694081562,219.4384C151.6381463667544,217.928125,187.07340521863193,207.57511147540984,204.79103464457071,205.3282C222.31608114196666,203.10571147540983,257.36617413675856,203.357725,274.89122063415454,201.5608C292.4162671315505,199.76387499999998,327.4663601263424,193.47297786885247,344.9914066237384,190.9528C362.70903604967714,188.40492786885247,398.1442949015547,181.182325,415.86192432749345,181.2886C433.5795537534322,181.394875,469.01481260530977,202.66209180327868,486.7324420312485,191.803C504.25748852864444,181.0619418032787,539.3075815234364,101.29188618784531,556.8326280208323,94.888C574.1650915896855,88.55448618784531,608.8300187273917,134.20465000000002,626.1624822962449,140.85340000000002C643.8801117221836,147.64990000000003,679.3153705740613,146.7151,697.033,148.669" stroke-width="3"/><circle cx="63.04999923706055" cy="217.4104" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="133.92051694081562" cy="219.4384" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="204.79103464457071" cy="205.3282" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="274.89122063415454" cy="201.5608" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="344.9914066237384" cy="190.9528" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="415.86192432749345" cy="181.2886" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="486.7324420312485" cy="191.803" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="556.8326280208323" cy="94.888" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="626.1624822962449" cy="140.85340000000002" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><circle cx="697.033" cy="148.669" r="4" fill="#3c8dbc" stroke="#ffffff" style="" stroke-width="1"/><path style="fill-opacity: 1;" fill="#eaf3f6" stroke="none" d="M63.04999923706055,238.2052C80.76762866299931,237.9868,116.20288751487685,239.52145000000002,133.92051694081562,237.3316C151.6381463667544,235.14175,187.07340521863193,221.65594426229507,204.79103464457071,220.6864C222.31608114196666,219.72739426229506,257.36617413675856,231.46795,274.89122063415454,229.6174C292.4162671315505,227.76685,327.4663601263424,207.72728606557376,344.9914066237384,205.882C362.70903604967714,204.01643606557377,398.1442949015547,212.83375,415.86192432749345,214.774C433.5795537534322,216.71425,469.01481260530977,230.62202295081966,486.7324420312485,221.404C504.25748852864444,212.28617295081966,539.3075815234364,147.18252900552486,556.8326280208323,141.4306C574.1650915896855,135.74187900552485,608.8300187273917,169.23757857142857,626.1624822962449,175.6414C643.8801117221836,182.18752857142857,679.3153705740613,188.83315,697.033,193.2304L697.033,259L63.04999923706055,259Z" fill-opacity="1"/><path style="" fill="none" stroke="#a0d0e0" d="M63.04999923706055,238.2052C80.76762866299931,237.9868,116.20288751487685,239.52145000000002,133.92051694081562,237.3316C151.6381463667544,235.14175,187.07340521863193,221.65594426229507,204.79103464457071,220.6864C222.31608114196666,219.72739426229506,257.36617413675856,231.46795,274.89122063415454,229.6174C292.4162671315505,227.76685,327.4663601263424,207.72728606557376,344.9914066237384,205.882C362.70903604967714,204.01643606557377,398.1442949015547,212.83375,415.86192432749345,214.774C433.5795537534322,216.71425,469.01481260530977,230.62202295081966,486.7324420312485,221.404C504.25748852864444,212.28617295081966,539.3075815234364,147.18252900552486,556.8326280208323,141.4306C574.1650915896855,135.74187900552485,608.8300187273917,169.23757857142857,626.1624822962449,175.6414C643.8801117221836,182.18752857142857,679.3153705740613,188.83315,697.033,193.2304" stroke-width="3"/><circle cx="63.04999923706055" cy="238.2052" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="133.92051694081562" cy="237.3316" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="204.79103464457071" cy="220.6864" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="274.89122063415454" cy="229.6174" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="344.9914066237384" cy="205.882" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="415.86192432749345" cy="214.774" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="486.7324420312485" cy="221.404" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="556.8326280208323" cy="141.4306" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="626.1624822962449" cy="175.6414" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/><circle cx="697.033" cy="193.2304" r="4" fill="#a0d0e0" stroke="#ffffff" style="" stroke-width="1"/></svg><div class="morris-hover morris-default-style" style="left: 371.212px; top: 129px; display: none;"><div class="morris-hover-row-label">2012 Q2</div><div class="morris-hover-point" style="color: #a0d0e0">
+                                Item 1:
+                                5,670
+                            </div><div class="morris-hover-point" style="color: #3c8dbc">
+                                Item 2:
+                                4,293
+                            </div></div></div>
+                            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"><svg height="342" version="1.1" width="512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;"><desc>Created with Raphaël 2.2.0</desc><defs/><path style="opacity: 0;" fill="none" stroke="#3c8dbc" d="M376.0165,243.33333333333331A93.33333333333333,93.33333333333333,0,0,0,464.2442551949771,180.44625304313007" stroke-width="2" opacity="0"/><path style="" fill="#3c8dbc" stroke="#ffffff" d="M376.0165,246.33333333333331A96.33333333333333,96.33333333333333,0,0,0,467.0801473262442,181.4248826052307L503.6316459070204,194.03833029452744A135,135,0,0,1,376.0165,285Z" stroke-width="3"/><path style="opacity: 1;" fill="none" stroke="#f56954" d="M464.2442551949771,180.44625304313007A93.33333333333333,93.33333333333333,0,0,0,292.3013462783141,108.73398312817662" stroke-width="2" opacity="1"/><path style="" fill="#f56954" stroke="#ffffff" d="M467.0801473262442,181.4248826052307A96.33333333333333,96.33333333333333,0,0,0,289.61050205154567,107.40757544301087L250.44376941747117,88.10097469226493A140,140,0,0,1,508.35813279246565,195.6693795646951Z" stroke-width="3"/><path style="opacity: 0;" fill="none" stroke="#00a65a" d="M292.3013462783141,108.73398312817662A93.33333333333333,93.33333333333333,0,0,0,375.98717846904884,243.333328727518" stroke-width="2" opacity="0"/><path style="" fill="#00a65a" stroke="#ffffff" d="M289.61050205154567,107.40757544301087A96.33333333333333,96.33333333333333,0,0,0,375.98623599126825,246.3333285794739L375.9740884998742,284.9999933380171A135,135,0,0,1,254.92850979541862,90.31165416754118Z" stroke-width="3"/><text style="text-anchor: middle; font-family: &quot;Arial&quot;; font-size: 15px; font-weight: 800;" x="376.0165" y="140" text-anchor="middle" font-family="&quot;Arial&quot;" font-size="15px" stroke="none" fill="#000000" font-weight="800" transform="matrix(1,0,0,1,0,0)"><tspan dy="140">In-Store Sales</tspan></text><text style="text-anchor: middle; font-family: &quot;Arial&quot;; font-size: 14px;" x="376.0165" y="160" text-anchor="middle" font-family="&quot;Arial&quot;" font-size="14px" stroke="none" fill="#000000" transform="matrix(1,0,0,1,0,0)"><tspan dy="160">30</tspan></text></svg></div>
+                        </div>
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+                <!-- /.Left col -->
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    [#include "/admin/common/footer.html"]
+
+    <!-- Control Sidebar -->
+    [#include "/admin/common/aside.html"]
+
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="${siteurl}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="${siteurl}plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="${siteurl}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="${siteurl}dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="${siteurl}dist/js/demo.js"></script>
+<script src="${siteurl}dist/js/list.js"></script>
+
+</body>
+</html>
