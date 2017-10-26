@@ -1,0 +1,2 @@
+# discover
+discover是一个集成spring+springMVC+hibernate的用于cms的基础功能工程
